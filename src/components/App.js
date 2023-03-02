@@ -1,13 +1,21 @@
+import { useState } from "react";
 import styled from "styled-components";
 import Calculadora from "./Calculadora";
+import Tabela from "./Tabela";
 
 function App() {
+  
+  const [calculoIMC, setCalculoIMC] = useState("")
+  const [classIMC , setClassIMC] = useState("")
+  console.log(classIMC)
+  console.log(calculoIMC)
   return (
     <>
       <Screen>
         <ContainerCalculadora>
           <Title>Calculadora de IMC</Title>
-          <Calculadora />
+          <Calculadora calculoIMC={calculoIMC} setCalculoIMC={setCalculoIMC} setClassIMC={setClassIMC}/>
+          <Tabela calculoIMC={calculoIMC} classIMC={classIMC}/>
         </ContainerCalculadora>
       </Screen>
     </>
